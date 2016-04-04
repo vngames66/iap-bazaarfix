@@ -2,6 +2,6 @@
     package="com.ludei.inapps.googleplay"
     android:versionCode="1"
     android:versionName="1.0" >
-    <uses-permission android:name="com.android.vending.BILLING" />
+    <uses-permission android:name="com.farsitel.bazaar.permission.PAY_THROUGH_BAZAAR" />
 
 </manifest>
