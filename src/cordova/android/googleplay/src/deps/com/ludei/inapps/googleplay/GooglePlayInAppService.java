@@ -78,8 +78,8 @@ public class GooglePlayInAppService extends AbstractInAppService
     public GooglePlayInAppService(Context ctx)
     {
         super(ctx);
-        Intent serviceIntent = new Intent("ir.cafebazaar.pardakht.InAppBillingService.BIND");
-        serviceIntent.setPackage("com.farsitel.bazaar");
+        Intent serviceIntent = new Intent("ir.tgbs.iranapps.billing.InAppBillingService.BIND");
+        serviceIntent.setPackage("ir.tgbs.android.iranapp");
         mContext.bindService(serviceIntent, mServiceConn, Context.BIND_AUTO_CREATE);
     }
 
