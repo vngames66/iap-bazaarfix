@@ -281,7 +281,7 @@ public class GooglePlayInAppService extends AbstractInAppService
         catch (Exception e) {
 
         }
-        
+        /*
         fetchPurchases(productId, 0, new FetchPurchasesCallback() {
             @Override
             public void onCompleted(ArrayList<GPInAppPurchase> purchases, final Error error) {
@@ -320,7 +320,7 @@ public class GooglePlayInAppService extends AbstractInAppService
                 });
 
             }
-        });
+        });*/
     }
 
     protected void validatePurchase(final GPInAppPurchase purchase, final PurchaseCallback callback) {
