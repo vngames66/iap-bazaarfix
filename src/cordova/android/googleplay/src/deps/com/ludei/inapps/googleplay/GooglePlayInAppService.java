@@ -277,7 +277,7 @@ public class GooglePlayInAppService extends AbstractInAppService
         
         fetchPurchases(productId, 0, new FetchPurchasesCallback(productId) {
             @Override
-            public void onCompleted(ArrayList<GPInAppPurchase> purchases, final Error error) {
+            public void onCompleted(ArrayList<GPInAppPurchase> purchases, final Error error,productId) {
                 Error consumeError = error;
                 int consumed = 0;
 
