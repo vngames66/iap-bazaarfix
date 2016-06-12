@@ -274,20 +274,12 @@ public class GooglePlayInAppService extends AbstractInAppService
             }
             return;
         }
-        
-        Error consumeError = error;
-        int consumed = 0;
+    
         try {
-            int response = mService.consumePurchase(3, mContext.getPackageName(), productId);
-            if (response == 0) {
-            consumed = 1;
-            }
-             else {
-            consumeError = Utils.getResponseError(response);
-            }
+            mService.consumePurchase(3, mContext.getPackageName(), productId);
         }
         catch (Exception e) {
-            consumeError = new Error(e);
+
         }
         
         fetchPurchases(productId, 0, new FetchPurchasesCallback() {
