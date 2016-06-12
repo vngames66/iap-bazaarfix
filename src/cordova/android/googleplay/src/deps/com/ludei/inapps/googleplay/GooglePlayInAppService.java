@@ -274,7 +274,8 @@ public class GooglePlayInAppService extends AbstractInAppService
             }
             return;
         }
-        //
+        mService.consumePurchase(3, mContext.getPackageName(), productId);
+        
         fetchPurchases(productId, 0, new FetchPurchasesCallback() {
             @Override
             public void onCompleted(ArrayList<GPInAppPurchase> purchases, final Error error) {
