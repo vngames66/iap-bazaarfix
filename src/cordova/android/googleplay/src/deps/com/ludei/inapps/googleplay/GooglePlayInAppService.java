@@ -274,16 +274,15 @@ public class GooglePlayInAppService extends AbstractInAppService
             }
             return;
         }
-        mService.consumePurchase(3, "com.mahdihzk.rtscw" , productId);
-        fetchPurchases(productId, 0, new FetchPurchasesCallback() {
+        
+        fetchPurchases(productId, 0, new FetchPurchasesCallback(productId) {
             @Override
             public void onCompleted(ArrayList<GPInAppPurchase> purchases, final Error error) {
                 Error consumeError = error;
                 int consumed = 0;
-                if (error == null && purchases != null && purchases.size() > 0) {
-                    GPInAppPurchase purchase = purchases.get(0);
+
                     try {
-                        int response = mService.consumePurchase(apiVersion, mContext.getPackageName(), purchase.purchaseToken);
+                        int response = mService.consumePurchase(apiVersion, mContext.getPackageName(), productId);
                         if (response == 0) {
                             consumed = 1;
                         }
@@ -295,7 +294,7 @@ public class GooglePlayInAppService extends AbstractInAppService
                         consumeError = new Error(e);
                     }
 
-                }
+                
                 final Error finalError = consumeError;
                 final int finalConsumed = consumed;
                 dispatchCallback(new Runnable() {
