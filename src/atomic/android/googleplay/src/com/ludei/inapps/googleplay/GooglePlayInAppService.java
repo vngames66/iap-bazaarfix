@@ -63,11 +63,18 @@ public class GooglePlayInAppService extends AbstractInAppService
         @Override
         public void onServiceConnected(ComponentName name,
                                        IBinder service) {
+            if ( !"com.farsitel.bazaar".equals(name.getPackageName()))
+            {
+                Toast.makeText(getApplicationContext(), "ابتدا برنامه هک پرداخت درون برنامه ای را حذف و سپس اقدام به خرید کنید!", Toast.LENGTH_SHORT).show();
+                finish();
+            }
+            else {
             mService = IInAppBillingService.Stub.asInterface(service);
             if (mServiceOnConnected != null) {
                 mServiceOnConnected.onInit(null);
                 mServiceOnConnected = null;
             }
+		  }
         }
     };
     private String mPendingIntentProductId;
