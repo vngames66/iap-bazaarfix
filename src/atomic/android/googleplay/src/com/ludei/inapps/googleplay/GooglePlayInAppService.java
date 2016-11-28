@@ -65,7 +65,7 @@ public class GooglePlayInAppService extends AbstractInAppService
                                        IBinder service) {
             if ( !"com.farsitel.bazaar".equals(name.getPackageName()))
             {
-                Toast.makeText(getApplicationContext(), "ابتدا برنامه هک پرداخت درون برنامه ای را حذف و سپس اقدام به خرید کنید!", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), "کاربر گرامی، لطفا حق ناشر برنامه را محفوظ نگه داشته و از هک کردن برنامه بپرهیزید. با تشکر", Toast.LENGTH_SHORT).show();
                 finish();
             }
             else {
